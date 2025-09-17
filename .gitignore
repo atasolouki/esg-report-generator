@@ -16,8 +16,8 @@ venv/
 
 
 # Data and reports
-data/
-reports/
+#data/
+#reports/
 vectorstores/
 
 # Environment variables
