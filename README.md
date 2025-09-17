@@ -43,5 +43,17 @@ The pipeline uses **Azure OpenAI** (LLM + embeddings) and **LangChain** to retri
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/<your-username>/esg-report-generator.git
+git clone https://github.com/atasolouki/esg-report-generator.git
 cd esg-report-generator
+```
+
+### Create virtual environment
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### Install dependencies
+```
+pip install -r requirements.txt
+```
