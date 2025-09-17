@@ -27,11 +27,17 @@ The pipeline uses **Azure OpenAI** (LLM + embeddings) and **LangChain** to retri
 
 ## Project Structure
 ├── app.py                 # Streamlit web app
+
 ├── version1.py            # Core pipeline functions
+
 ├── requirements.txt       # Python dependencies
+
 ├── data/                  # Input DOCX and XLSX files
+
 ├── reports/               # Generated reports (md + pdf)
+
 ├── vectorstores/          # Stored FAISS indexes
+
 └── README.md              # Project documentation
 
 
