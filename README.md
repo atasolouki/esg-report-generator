@@ -57,3 +57,42 @@ source .venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+
+### Environment Setup
+
+Before running the project, create a file named `.env` in the root directory of the project and fill in the required values:
+```
+AZURE_OPENAI_ENDPOINT=<your-azure-endpoint>
+AZURE_OPENAI_API_KEY=<your-azure-api-key>
+AZURE_OPENAI_DEPLOYMENT_LLM=o4-mini
+AZURE_OPENAI_DEPLOYMENT_EMBEDDING=text-embedding-3-large
+AZURE_OPENAI_API_VERSION=2025-01-01-preview
+TAVILY_API_KEY=<your-tavily-api-key>
+```
+## Running Locally
+### Streamlit web app
+```
+streamlit run app.py
+```
+Upload DOCX and XLSX files → download the generated ESG report (PDF + Markdown).
+
+### Jupyter Notebook
+A step-by-step notebook is provided to walk through the pipeline with explanations.
+
+## Running with Docker
+Build image
+```
+docker build -t esg-report-app .
+```
+Run container
+```
+docker run -p 8501:8501 --env-file .env \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/reports:/app/reports \
+  esg-report-app
+```
+Then open: http://localhost:8501
+
+## Output
+- report_<company>.md → Editable Markdown report
+- report_<company>.pdf → Styled PDF report
